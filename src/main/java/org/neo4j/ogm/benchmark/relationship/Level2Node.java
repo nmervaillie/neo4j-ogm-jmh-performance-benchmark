@@ -1,4 +1,4 @@
-package org.neo4j.ogm.benchmark;
+package org.neo4j.ogm.benchmark.relationship;
 
 import org.neo4j.ogm.annotation.NodeEntity;
 

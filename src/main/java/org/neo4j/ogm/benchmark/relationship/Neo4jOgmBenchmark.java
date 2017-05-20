@@ -1,10 +1,9 @@
-package org.neo4j;
+package org.neo4j.ogm.benchmark.relationship;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-import org.neo4j.ogm.benchmark.Primary;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 import org.openjdk.jmh.annotations.*;

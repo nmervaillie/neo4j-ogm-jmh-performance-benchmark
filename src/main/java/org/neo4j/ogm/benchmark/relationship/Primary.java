@@ -1,4 +1,4 @@
-package org.neo4j.ogm.benchmark;
+package org.neo4j.ogm.benchmark.relationship;
 
 import java.util.ArrayList;
 import java.util.List;
