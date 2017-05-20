@@ -39,7 +39,6 @@ public class Genre {
         return movies;
     }
 
-    @Relationship(type = "IN_GENRE", direction = "INCOMING")
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }

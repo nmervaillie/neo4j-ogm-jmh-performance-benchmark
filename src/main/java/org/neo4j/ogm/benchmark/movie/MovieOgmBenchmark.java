@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 import org.neo4j.ogm.benchmark.movie.domain.Movie;
+import org.neo4j.ogm.config.ClasspathConfigurationSource;
+import org.neo4j.ogm.config.Configuration;
 import org.neo4j.ogm.cypher.query.Pagination;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
@@ -35,7 +37,8 @@ public class MovieOgmBenchmark {
     @State(Scope.Benchmark)
     public static class SessionState {
 
-        SessionFactory sf = new SessionFactory("org.neo4j.ogm.benchmark.movie.domain");
+        SessionFactory sf = new SessionFactory(new Configuration.Builder(new ClasspathConfigurationSource( "ogm.properties")).build(),
+                                               "org.neo4j.ogm.benchmark.movie.domain");
         Session session;
 
         @Setup(Level.Trial)
@@ -43,10 +46,10 @@ public class MovieOgmBenchmark {
             session = sf.openSession();
         }
 
-        @Setup(Level.Trial)
+        /*@Setup(Level.Trial)
         public void shutdown() {
             sf.close();
-        }
+        }*/
 
         public Session getSession() {
             return session;

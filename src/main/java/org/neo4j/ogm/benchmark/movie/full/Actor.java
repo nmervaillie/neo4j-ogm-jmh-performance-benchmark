@@ -38,7 +38,6 @@ public class Actor {
         return movies;
     }
 
-    @Relationship(type = "ACTED_IN")
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }

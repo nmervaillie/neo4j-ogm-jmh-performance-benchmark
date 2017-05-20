@@ -17,6 +17,7 @@ public class Main {
         Options opts = new OptionsBuilder()
                 .include("org\\.neo4j\\.ogm\\.benchmark\\.movie.MovieOgmBenchmark.loadOneMovieDepth2")
                 .forks(1)
+                .jvmArgs("-XX:+UnlockCommercialFeatures", "-XX:+FlightRecorder","-XX:StartFlightRecording=name=MyRecording,filename=target/myrecording.jfr,settings=profile,dumponexit=true")
                 .resultFormat(ResultFormatType.TEXT)
                 .build();
 

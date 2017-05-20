@@ -94,7 +94,6 @@ public class Movie {
         return genres;
     }
 
-    @Relationship(type = "IN_GENRE")
     public void setGenres(Set<Genre> genres) {
         this.genres = genres;
     }
@@ -103,7 +102,6 @@ public class Movie {
         return directors;
     }
 
-    @Relationship(type = "DIRECTED", direction = "INCOMING")
     public void setDirectors(Set<Director> directors) {
         this.directors = directors;
     }
@@ -112,7 +110,6 @@ public class Movie {
         return actors;
     }
 
-    @Relationship(type = "ACTED_IN", direction = "INCOMING")
     public void setActors(Set<Actor> actors) {
         this.actors = actors;
     }

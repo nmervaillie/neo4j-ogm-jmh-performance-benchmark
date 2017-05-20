@@ -3,6 +3,8 @@ package org.neo4j.ogm.benchmark.movie;
 import java.util.concurrent.TimeUnit;
 
 import org.neo4j.ogm.benchmark.movie.full.Movie;
+import org.neo4j.ogm.config.ClasspathConfigurationSource;
+import org.neo4j.ogm.config.Configuration;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -26,7 +28,8 @@ public class MovieFullOgmBenchmark {
     @State(Scope.Benchmark)
     public static class SessionState {
 
-        SessionFactory sf = new SessionFactory("org.neo4j.ogm.benchmark.movie.full");
+        SessionFactory sf = new SessionFactory(new Configuration.Builder(new ClasspathConfigurationSource("ogm.properties")).build(),
+                                               "org.neo4j.ogm.benchmark.movie.full");
         Session session;
 
         @Setup(Level.Trial)
