@@ -1,15 +1,8 @@
 package org.neo4j.ogm.benchmark.movie;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-import org.neo4j.ogm.benchmark.movie.domain.Movie;
-import org.neo4j.ogm.config.ClasspathConfigurationSource;
-import org.neo4j.ogm.config.Configuration;
-import org.neo4j.ogm.cypher.query.Pagination;
-import org.neo4j.ogm.session.Session;
-import org.neo4j.ogm.session.SessionFactory;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -21,13 +14,18 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
-import org.openjdk.jmh.results.Result;
-import org.openjdk.jmh.results.RunResult;
-import org.openjdk.jmh.results.format.ResultFormatType;
-import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import org.neo4j.ogm.benchmark.movie.domain.Movie;
+import org.neo4j.ogm.config.ClasspathConfigurationSource;
+import org.neo4j.ogm.config.Configuration;
+import org.neo4j.ogm.session.Session;
+import org.neo4j.ogm.session.SessionFactory;
+
+/**
+ * Expects movie recommendations dataset in neo4j database
+ * https://neo4j.com/sandbox-v2/
+ *
+ */
 @Warmup(iterations = 3, time = 10)
 @Measurement(iterations = 5, time = 10, timeUnit = TimeUnit.SECONDS)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)

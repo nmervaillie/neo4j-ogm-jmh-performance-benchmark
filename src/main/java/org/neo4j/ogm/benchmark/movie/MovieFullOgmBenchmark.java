@@ -19,6 +19,11 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 
+/**
+ * Expects movie recommendations dataset in neo4j database
+ * https://neo4j.com/sandbox-v2/
+ *
+ */
 @Warmup(iterations = 3, time = 10)
 @Measurement(iterations = 5, time = 10, timeUnit = TimeUnit.SECONDS)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
