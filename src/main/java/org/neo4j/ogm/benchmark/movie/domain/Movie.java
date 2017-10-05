@@ -29,6 +29,14 @@ public class Movie {
     @Relationship(type = "DIRECTED", direction = "INCOMING")
     private Set<Director> directors;
 
+    public Movie() {
+    }
+
+    public Movie(String title, Integer year) {
+        this.title = title;
+        this.year = year;
+    }
+
     public Long getId() {
         return id;
     }
